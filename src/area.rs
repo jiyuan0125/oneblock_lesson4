@@ -77,6 +77,13 @@ pub fn get_area<T: Shape>(shape: &T) -> Option<f64> {
     shape.get_area()
 }
 
+pub fn print_area<T: Shape>(shape: &T) {
+    match shape.get_area() {
+        Some(area) => println!("Area: {}", area),
+        None => println!("Area is too big"),
+    }
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
